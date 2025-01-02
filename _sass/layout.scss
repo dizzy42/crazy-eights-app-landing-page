@@ -38,14 +38,14 @@
 	max-width: $content-width;
 	padding-left: 15px;
 	padding-right: 15px;
-	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows: 115px 876px auto auto;
+	grid-template-columns: 65% 35%;
+	grid-template-rows: 115px auto auto auto;
 	grid-column-gap: 30px;
 	grid-template-areas: 
-		"h h h h h h h h h h h h"
-		"p p p p p i i i i i i i"
-		"c c c c c c c c c c c c"
-		"f f f f f f f f f f f f";
+		"h h"
+		"p i"
+		"c c"
+		"f f";
 }
 
 .subPageContainer {
@@ -63,15 +63,13 @@
 @media only screen and (max-width: 992px) {
 
 	.container {
-		grid-column-gap: 0px;
-		grid-template-columns: 1;
-		grid-template-rows: 115px auto auto auto auto;
+		grid-template-columns: 1fr;
 		grid-template-areas: 
-			"h h h h h h h h h h h h"
-			"i i i i i i i i i i i i"
-			"p p p p p p p p p p p p"
-			"c c c c c c c c c c c c"
-			"f f f f f f f f f f f f";
+			"h"
+			"i"
+			"p"
+			"c"
+			"f";
 	}
 }
 
@@ -245,16 +243,18 @@ nav > ul li a:active {
 .appInfo {
 	grid-area: i;
 	display: flex;
-	flex-wrap: wrap;
-	padding-top: 140px;
-	align-content: flex-start;
+	flex-direction: column;
+	align-items: flex-start;
+	padding-top: 100px;
+	margin-left: 20px;
 }
 
 @media only screen and (max-width: 992px) {
 
 	.appInfo {
 		padding-top: 50px;
-		justify-content: center;
+		align-items: center;
+		margin-left: 0;
 	}
 
 } 
@@ -381,17 +381,23 @@ nav > ul li a:active {
 .iphonePreview {
 	grid-area: p;
 	background-image: url($device-color);
-	background-size: 400px auto;
+	background-size: 700px auto;
+	background-position: left center;
 	background-repeat: no-repeat;
-	margin-top: 68px;
+	margin-top: 48px;
+	min-height: 500px;
+	position: relative;
 }
 
 .iphoneScreen {
-	width: 349px;
+	position: absolute;
+	width: 590px;
+	height: 280px;
+	top: 110px;
+	left: 55px;
 	-webkit-clip-path: url(#screenMask);
 	clip-path: url(#screenMask);
-	margin-left: 26px;
-	margin-top: 23px;
+	object-fit: cover;
 }
 
 .videoContainer {
@@ -415,9 +421,10 @@ nav > ul li a:active {
 	}
 
 	.iphoneScreen {
-		width: 322px;
-		margin-left: 24px;
-		margin-top: 22px;
+		width: 310px;
+		height: 150px;
+		top: 100px;
+		left: 30px;
 	}
 
 	.videoContainer {
@@ -437,21 +444,16 @@ nav > ul li a:active {
 @media only screen and (max-width: 992px) {
 
 	.iphonePreview {
-		display: flex;
-		background-size: 260px auto;
-		background-position: center 0;
-		margin-top: 47px;
-		justify-content: center;
-		padding-bottom: 75px;
+		background-size: 500px auto;
+		background-position: center;
+		margin-top: 30px;
 	}
 
 	.iphoneScreen {
-		width: 226px;
-		height: 488px;
-		-webkit-clip-path: url(#screenMask);
-		clip-path: url(#screenMask);
-		margin: 0px;
-		margin-top: 17px;
+		width: 420px;
+		height: 200px;
+		top: 87px;
+		left: 40px;
 	}
 
 	.videoContainer {
