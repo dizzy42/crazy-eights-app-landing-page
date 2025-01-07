@@ -757,3 +757,38 @@ footer {
         margin-top: 20px;
     }
 }
+
+.cc-window {
+    font-family: $font;
+    font-size: 1.6rem;
+    
+    .cc-btn {
+        border-radius: 4px;
+        padding: 8px 16px;
+        cursor: pointer;
+        font-weight: bold;
+        
+        &.cc-allow {
+            background: $link-color;  // Using your site's link color
+            color: #fff;
+            
+            &:hover {
+                background: darken($link-color, 10%);
+            }
+        }
+        
+        &.cc-deny {
+            background: #f1f1f1;
+            color: #666;
+            
+            &:hover {
+                background: darken(#f1f1f1, 10%);
+            }
+        }
+    }
+}
+
+.cc-revoke {
+    font-family: $font;
+    font-size: 1.4rem;
+}
