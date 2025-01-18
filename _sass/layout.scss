@@ -49,8 +49,10 @@
 }
 
 .subPageContainer {
-	grid-template-rows: 115px auto auto auto;
-	background-color: #fff;
+	grid-template-columns: 1fr;  // Single column for sub pages
+	max-width: 800px;  // Limit width for better readability
+	margin: 0 auto;    // Center the container
+	padding: 0 30px;   // Add padding on both sides
 }
 
 @media only screen and (max-width: 768px) {
@@ -112,13 +114,38 @@
 			"p"
 			"c"
 			"f";
+		padding-left: 40px;
+		padding-right: 40px;
 	}
 }
 
 .page {
-	margin-top: 30px;
+	margin-top: 50px;
 	margin-bottom: 70px;
-	grid-column: 3/11;
+	width: 100%;       // Take full width of container
+	
+	h1 {
+		font-size: 3.2rem;
+		font-weight: bold;
+		margin-bottom: 30px;
+	}
+	
+	h2 {
+		font-size: 2.4rem;
+		margin-top: 40px;
+		margin-bottom: 20px;
+	}
+	
+	h3 {
+		font-size: 2rem;
+		margin-top: 30px;
+		margin-bottom: 15px;
+	}
+	
+	p {
+		line-height: 1.6;
+		margin-bottom: 15px;
+	}
 }
 
 @media only screen and (max-width: 768px) {
@@ -791,4 +818,27 @@ footer {
 .cc-revoke {
     font-family: $font;
     font-size: 1.4rem;
+}
+
+// Responsive adjustments
+@media only screen and (max-width: 768px) {
+    .subPageContainer {
+        padding: 0 20px;
+    }
+    
+    .page {
+        margin-top: 30px;
+        
+        h1 {
+            font-size: 2.8rem;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+        }
+    }
 }
